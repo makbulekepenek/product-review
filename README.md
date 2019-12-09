@@ -1,5 +1,4 @@
 # product-review
-product review
 GEREKSİNİMLER/KURULACAKLAR ->
 
 npm/Node js
