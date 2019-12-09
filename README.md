@@ -1,7 +1,5 @@
 
 # product-review
-GEREKSİNİMLER/KURULACAKLAR ->
-
 
 ###### **GEREKSİNİMLER/KURULACAKLAR ->**
 ## 
@@ -12,7 +10,8 @@ npm/Node js
 
 	https://docs.aws.amazon.com/en_us/cli/latest/userguide/install-linux-al2017.html
 **Terraform**
-- wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+
+        - wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
 	- unzip terraform_0.11.11_linux_amd64.zip
 	- sudo mv terraform /usr/local/bin/
 	- terraform --version
@@ -25,6 +24,7 @@ sudo apt-get install mysql-client
 
 **jq**
 sudo apt-get install jq
+
 ## 
 ###### **KURULUM ->**
 ## 
@@ -41,10 +41,11 @@ cd adventure-works-product-review-app/api/layer/ && npm install
 
 
 **BUCKET -> **
+
 aws s3api create-bucket --bucket $BUCKET --region $REGION --create-bucket-configuration LocationConstraint=$REGION
 	
-TERRAFORM (RDS -VPC) ->
-	cd ../../terraform/
+**TERRAFORM (RDS -VPC) ->**
+    cd ../../terraform/
     
     terraform init \
     -backend-config="bucket=$BUCKET" \
@@ -69,12 +70,17 @@ TERRAFORM (RDS -VPC) ->
 	
 	
 **SERVERLESS ->**
+
 serverless deploy
+
 **YORUM ALMA -> **
+
    -       curl -X GET \
    -        < son > \
    -        -H 'Authorization: Allow' 
+   
 **YORUM EKLEME ->  **
+
 curl -X POST \
      < son > \
      -H 'Authorization: Allow' \
@@ -86,8 +92,9 @@ curl -X POST \
    "productid": "3",
    "review": "I really love the product and will recommend!"
    }'
-<<<<<<< HEAD
+
   **TEMİZLEME ->**
+  
   
   serverless remove
   terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
