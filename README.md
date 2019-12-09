@@ -19,20 +19,25 @@ npm/Node js
 	- terraform --version
 	
 **Serverless Framework**
+
 npm install -g serverless
 
 **mysql client**
+
 sudo apt-get install mysql-client
 
 **jq**
+
 sudo apt-get install jq
 
 ## 
 ###### **KURULUM ->**
 ## 
+
 cd adventure-works-product-review-app/api/layer/ && npm install
 
 **BASH ->**
+
  ```sql
     REGION="<select region>"
     
@@ -47,6 +52,7 @@ cd adventure-works-product-review-app/api/layer/ && npm install
 aws s3api create-bucket --bucket $BUCKET --region $REGION --create-bucket-configuration LocationConstraint=$REGION
 	
 **TERRAFORM (RDS -VPC) ->**
+
     cd ../../terraform/
     
     terraform init \
@@ -73,15 +79,18 @@ aws s3api create-bucket --bucket $BUCKET --region $REGION --create-bucket-config
 	
 **SERVERLESS ->**
 
+
 serverless deploy
 
 **YORUM ALMA -> **
+
 
    -       curl -X GET \
    -        < son > \
    -        -H 'Authorization: Allow' 
    
 **YORUM EKLEME ->  **
+
 
 curl -X POST \
      < son > \
