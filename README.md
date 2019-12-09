@@ -1,41 +1,43 @@
-# product-review
-product review
-GEREKSİNİMLER/KURULACAKLAR ->
 
+###### **GEREKSİNİMLER/KURULACAKLAR ->**
+## 
 npm/Node js
 	https://github.com/creationix/nvm
 	Sürüm : 8.11
+**Aws cli**
 
-Aws cli
 	https://docs.aws.amazon.com/en_us/cli/latest/userguide/install-linux-al2017.html
-
-Terraform
-	- wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+**Terraform**
+- wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
 	- unzip terraform_0.11.11_linux_amd64.zip
 	- sudo mv terraform /usr/local/bin/
 	- terraform --version
+	
+**Serverless Framework**
+npm install -g serverless
 
-Serverless Framework
-	npm install -g serverless
+**mysql client**
+sudo apt-get install mysql-client
 
-mysql client
-	sudo apt-get install mysql-client
-
-jq
-	sudo apt-get install jq
-
-KURULUM ->
+**jq**
+sudo apt-get install jq
+## 
+###### **KURULUM ->**
+## 
 cd adventure-works-product-review-app/api/layer/ && npm install
 
-BASH ->
-	REGION="<select region>"
+**BASH ->**
+ ```sql
+    REGION="<select region>"
     
     BUCKET="<select bucket name for tf states>"
     
     PROFILE="<select aws profile>"
-	
-BUCKET -> 
-	aws s3api create-bucket --bucket $BUCKET --region $REGION --create-bucket-configuration LocationConstraint=$REGION
+```
+
+
+**BUCKET -> **
+aws s3api create-bucket --bucket $BUCKET --region $REGION --create-bucket-configuration LocationConstraint=$REGION
 	
 TERRAFORM (RDS -VPC) ->
 	cd ../../terraform/
@@ -52,25 +54,24 @@ TERRAFORM (RDS -VPC) ->
 	terraform output -json > terraformOutput.json
     
     node prepareServerlessConfig.js
-	
-VERİTABANI -> 
+
+**VERİTABANI -> **
+
 	cd ../api
     
     mysql -u foo --password=foobarbaz -h $(cat ../terraform/terraformOutput.json | jq -r .rds_endpoint.value) adventureworks < ./layer/database/AWBackup.sql
     
     mysql -u foo --password=foobarbaz -h $(cat ../terraform/terraformOutput.json | jq -r .rds_endpoint.value) adventureworks < ./layer/database/patch.sql
 	
-SERVERLESS ->
-	serverless deploy
-
-
-YORUM ALMA -> 
-	curl -X GET \
-    < son > \
-    -H 'Authorization: Allow' 
-
-YORUM EKLEME ->
-	curl -X POST \
+	
+**SERVERLESS ->**
+serverless deploy
+**YORUM ALMA -> **
+   -       curl -X GET \
+   -        < son > \
+   -        -H 'Authorization: Allow' 
+**YORUM EKLEME ->  **
+curl -X POST \
      < son > \
      -H 'Authorization: Allow' \
      -H 'Content-Type: application/json' \
@@ -81,7 +82,9 @@ YORUM EKLEME ->
    "productid": "3",
    "review": "I really love the product and will recommend!"
    }'
-   
-TEMİZLEME ->
-	serverless remove
+  **TEMİZLEME ->**
+  serverless remove
 	terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
+
+
+
