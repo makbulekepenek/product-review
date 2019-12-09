@@ -6,9 +6,11 @@
 npm/Node js
 	https://github.com/creationix/nvm
 	Sürüm : 8.11
+	
 **Aws cli**
 
 	https://docs.aws.amazon.com/en_us/cli/latest/userguide/install-linux-al2017.html
+	
 **Terraform**
 
         - wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
