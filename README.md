@@ -4,7 +4,9 @@
 ###### **GEREKSİNİMLER/KURULACAKLAR ->**
 ## 
 npm/Node js
+
 	https://github.com/creationix/nvm
+	
 	Sürüm : 8.11
 	
 **Aws cli**
