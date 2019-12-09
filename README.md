@@ -2,7 +2,7 @@
 =======
 # product-review
 GEREKSİNİMLER/KURULACAKLAR ->
->>>>>>> 7a1e09d175022376ff931cc3774307c48000dd65
+
 
 ###### **GEREKSİNİMLER/KURULACAKLAR ->**
 ## 
@@ -99,4 +99,4 @@ curl -X POST \
 TEMİZLEME ->
 	serverless remove
 	terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
->>>>>>> 7a1e09d175022376ff931cc3774307c48000dd65
+
