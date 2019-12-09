@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # product-review
 GEREKSİNİMLER/KURULACAKLAR ->
 
@@ -89,14 +88,12 @@ curl -X POST \
    }'
 <<<<<<< HEAD
   **TEMİZLEME ->**
+  
   serverless remove
-	terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
+  terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
 
 
 
 =======
    
-TEMİZLEME ->
-	serverless remove
-	terraform destroy -var 'aws_region'=$REGION  -var 'aws_profile'=$PROFILE
 
